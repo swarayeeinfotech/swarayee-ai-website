@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { COURSES } from '../data/businessData';
-import { buildWhatsAppUrl } from '../data/configStore';
+import { buildWhatsAppUrl, getBranchConfig } from '../data/configStore';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { X, MessageSquare, Printer, ShieldCheck } from 'lucide-react';
 
 interface AdmissionModalProps {
@@ -24,6 +25,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({
   const [inquiryNotes, setInquiryNotes] = useState('');
   const [showPrintSlip, setShowPrintSlip] = useState(false);
 
+  const branch = getBranchConfig();
   const activeCourse = COURSES.find((c) => c.id === courseId) || COURSES[0];
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
@@ -62,7 +64,7 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({
               संगणक अभ्यासक्रम प्रवेश चौकशी फॉर्म
             </h3>
             <p className="text-xs text-slate-500">
-              Swarayee Comps And Infotech OPC Pvt Ltd, भारत
+              {branch.legalName || 'Swarayee Comps And Infotech'}, भारत
             </p>
           </div>
           <button
@@ -219,13 +221,13 @@ export const AdmissionModal: React.FC<AdmissionModalProps> = ({
               <div className="text-center border-b pb-3 border-slate-300">
                 <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-orange-500/60 shadow-sm mx-auto mb-2 bg-white p-1">
                   <img
-                    src="/swarayee_logo.jpeg"
+                    src={ASSET_IMAGES.swarayeeLogo}
                     alt="Swarayee Comps And Infotech Logo"
                     className="w-full h-full object-contain rounded-lg"
                   />
                 </div>
                 <h4 className="font-extrabold text-sm uppercase tracking-wide text-slate-900">
-                  Swarayee Comps And Infotech OPC Pvt Ltd
+                  {branch.legalName || 'Swarayee Comps And Infotech'}
                 </h4>
                 <p className="text-[11px] text-slate-600 font-semibold">
                   प्रवेश नोंदणी व चौकशी स्लिप (Admission Slip)

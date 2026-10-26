@@ -1,5 +1,7 @@
+import { ASSET_IMAGES } from '../assets/assetRegistry';
+
 /**
- * Business Configuration Store for Swarayee Comps And Infotech OPC Pvt Ltd
+ * Business Configuration Store for Swarayee Comps And Infotech
  * Handles WhatsApp link generation, branch information, and transparent customer assistance.
  * Strict adherence: No fabricated phone numbers or fake affiliation numbers.
  */
@@ -29,7 +31,7 @@ export interface BranchInfo {
 }
 
 export const DEFAULT_BRANCH_INFO: BranchInfo = {
-  legalName: 'Swarayee Comps And Infotech OPC Pvt Ltd',
+  legalName: 'Swarayee Comps And Infotech',
   brandName: 'Swarayee Comps & Infotech',
   motto: 'ज्ञानदीप: प्रगतये',
   registrationType: '',
@@ -49,7 +51,7 @@ export const DEFAULT_BRANCH_INFO: BranchInfo = {
   operationalHours: 'सोमवार ते शनिवार: सकाळी ९:०० ते रात्री ८:३० पर्यंत',
   sundayHours: 'रविवार: सकाळी १०:०० ते दुपारी २:००',
   establishedNotice: 'CIN: U80900PN2023OPC217692 · GSTIN: 27ABKCS1334D1ZJ',
-  customLogoUrl: '/swarayee_logo.jpeg'
+  customLogoUrl: ASSET_IMAGES.swarayeeLogo
 };
 
 const STORAGE_KEY = 'swarayee_branch_config_v2';

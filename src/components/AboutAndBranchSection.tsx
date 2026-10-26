@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FAQS } from '../data/businessData';
 import { getBranchConfig, buildWhatsAppUrl } from '../data/configStore';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { Building2, Clock, MapPin, Mail, MessageSquare, ChevronDown, ChevronUp, ShieldCheck, Edit3 } from 'lucide-react';
 
 interface AboutAndBranchSectionProps {
@@ -33,7 +34,7 @@ export const AboutAndBranchSection: React.FC<AboutAndBranchSectionProps> = ({
             विद्यार्थी व नागरिकांसाठी एकात्मिक तंत्रज्ञान आणि सुविधा केंद्र
           </h2>
           <p className="mt-3 text-base text-slate-600 leading-relaxed">
-            Swarayee Comps And Infotech OPC Pvt Ltd ही संस्था उच्च दर्जाचे संगणक शिक्षण, तेज कुरिअरची जलद लॉजिस्टिक्स सेवा, अचूक रबर स्टॅम्प आणि शासकीय डिजिटल सेवा प्रामाणिकपणे पुरवण्यासाठी वचनबद्ध आहे.
+            Swarayee Comps And Infotech ही संस्था उच्च दर्जाचे संगणक शिक्षण, कुरिअर सेवा (भारत व भारताबाहेर), अचूक रबर स्टॅम्प आणि शासकीय डिजिटल सेवा प्रामाणिकपणे पुरवण्यासाठी वचनबद्ध आहे.
           </p>
         </div>
 
@@ -50,9 +51,10 @@ export const AboutAndBranchSection: React.FC<AboutAndBranchSectionProps> = ({
                 <div className="flex items-center gap-3">
                   <div className="p-1 rounded-xl bg-white border-2 border-orange-500/60 shadow-sm shrink-0 overflow-hidden">
                     <img
-                      src="/swarayee_logo.jpeg"
+                      src={ASSET_IMAGES.swarayeeLogo}
                       alt="Swarayee Comps And Infotech Logo"
                       className="h-12 w-12 object-contain rounded-lg"
+                      loading="lazy"
                     />
                   </div>
                   <div>

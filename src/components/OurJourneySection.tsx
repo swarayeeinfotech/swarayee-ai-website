@@ -28,8 +28,8 @@ export const OurJourneySection: React.FC<OurJourneySectionProps> = ({ onOpenAdmi
     {
       period: '०६ जानेवारी २०२३',
       badge: 'कॉर्पोरेट स्थापना',
-      title: 'Swarayee Comps And Infotech OPC Pvt Ltd ची स्थापना',
-      desc: 'दीर्घ अनुभवाच्या आधारावर कंपनीची OPC Pvt. Ltd. म्हणून अधिकृत नोंदणी झाली. शिक्षण, कौशल्य विकास, डिजिटल सेवा, तंत्रज्ञान सेवा, तेज कुरिअर व व्यवसाय सहाय्य या क्षेत्रांमध्ये विस्तार झाला.'
+      title: 'Swarayee Comps And Infotech ची स्थापना',
+      desc: 'दीर्घ अनुभवाच्या आधारावर कंपनीची नोंदणी झाली. शिक्षण, कौशल्य विकास, डिजिटल सेवा, तंत्रज्ञान सेवा, कुरिअर सेवा (भारत व भारताबाहेर) व व्यवसाय सहाय्य या क्षेत्रांमध्ये विस्तार झाला.'
     }
   ];
 
@@ -119,7 +119,7 @@ export const OurJourneySection: React.FC<OurJourneySectionProps> = ({ onOpenAdmi
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>तेज कुरिअर अधिकृत पार्सल व डॉक्युमेंट लॉजिस्टिक्स</span>
+                <span>कुरिअर सेवा (भारत व भारताबाहेर) पार्सल व डॉक्युमेंट लॉजिस्टिक्स</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -141,7 +141,7 @@ export const OurJourneySection: React.FC<OurJourneySectionProps> = ({ onOpenAdmi
               "आमचा उद्देश विद्यार्थी, नोकरी इच्छुक, उद्योजक, व्यावसायिक तसेच ग्रामीण भागातील नागरिकांना उपयुक्त तंत्रज्ञान, कौशल्ये आणि व्यावसायिक सेवा उपलब्ध करून देणे हा आहे."
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              या दीर्घ अनुभवाच्या आधारावर आज <strong>Swarayee Comps And Infotech OPC Pvt. Ltd.</strong> मार्फत शिक्षण, कौशल्य विकास, डिजिटल सेवा, तंत्रज्ञान सेवा आणि व्यवसाय सहाय्य या क्षेत्रांमध्ये विविध सेवा उपलब्ध करून देण्याचा अविरत प्रयत्न केला जात आहे.
+              या दीर्घ अनुभवाच्या आधारावर आज <strong>Swarayee Comps And Infotech</strong> मार्फत शिक्षण, कौशल्य विकास, डिजिटल सेवा, तंत्रज्ञान सेवा आणि व्यवसाय सहाय्य या क्षेत्रांमध्ये विविध सेवा उपलब्ध करून देण्याचा अविरत प्रयत्न केला जात आहे.
             </p>
           </div>
           <div className="absolute right-0 bottom-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>

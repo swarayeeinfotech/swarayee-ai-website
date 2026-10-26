@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fingerprint, ShieldCheck, CheckCircle2, MessageSquare, Phone, Truck, Wrench, Award, Download, ArrowRight } from 'lucide-react';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { buildWhatsAppUrl, getBranchConfig } from '../data/configStore';
 
 export const StartekSection: React.FC = () => {
@@ -43,9 +44,10 @@ export const StartekSection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border-2 border-blue-100 bg-gradient-to-b from-slate-50 to-white p-4 sm:p-6 shadow-md group">
               <div className="relative aspect-4/3 rounded-xl overflow-hidden bg-white border border-slate-200 flex items-center justify-center p-2">
                 <img
-                  src="/startek_thumb_device.jpg"
+                  src={ASSET_IMAGES.startekDevice}
                   alt="Startek FM220 Biometric Thumb Scanner Device"
                   className="w-full h-full object-contain group-hover:scale-103 transition-transform duration-300"
+                  loading="lazy"
                 />
                 
                 {/* Floating Cert Badge */}
@@ -70,9 +72,10 @@ export const StartekSection: React.FC = () => {
               <div className="rounded-xl overflow-hidden border border-slate-200 bg-white p-2 shadow-xs group">
                 <div className="aspect-4/3 rounded-lg overflow-hidden bg-slate-50">
                   <img
-                    src="/startek_box_package.jpg"
+                    src={ASSET_IMAGES.startekBox}
                     alt="Startek FM220U Box Packaging"
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                    loading="lazy"
                   />
                 </div>
                 <div className="text-[11px] font-bold text-slate-800 text-center mt-1.5">

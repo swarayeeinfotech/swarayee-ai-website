@@ -12,7 +12,8 @@ import {
   MapPin,
   Clock,
   ExternalLink,
-  Sparkles
+  Sparkles,
+  Fingerprint
 } from 'lucide-react';
 import { buildWhatsAppUrl, getBranchConfig } from '../data/configStore';
 
@@ -30,13 +31,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const branch = getBranchConfig();
 
-  // Menu items matching the authentic Swarayee website structure + Startek Device
+  // Menu items matching the authentic Swarayee website structure + Startek Device + Courier (India & Abroad)
   const navLinks = [
     { label: 'Home (मुख्यपृष्ठ)', href: '#' },
     { label: 'About (आमच्याबद्दल)', href: '#about' },
     { label: 'Courses (अभ्यासक्रम)', href: '#education' },
     { label: 'Startek थंब डिव्हाइस', href: '#startek' },
-    { label: 'तेज कुरिअर', href: '#courier' },
+    { label: 'कुरिअर सेवा (भारत व भारताबाहेर)', href: '#courier' },
     { label: 'रबर स्टॅम्प', href: '#stamps' },
     { label: 'छपाई सेवा', href: '#printing' },
     { label: 'सीएससी सेवा', href: '#csc' },
@@ -45,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const handleWhatsAppGeneral = () => {
-    const text = 'नमस्कार स्वराई कॉम्प्स अँड इन्फोटेक, मला आपल्या सेवांविषयी (संगणक शिक्षण / कुरिअर / रबर स्टॅम्प / प्रिंटिंग / सीएससी सेवा) माहिती हवी आहे.';
+    const text = 'नमस्कार स्वराई कॉम्प्स अँड इन्फोटेक, मला आपल्या सेवांविषयी (संगणक शिक्षण / कुरिअर सेवा / रबर स्टॅम्प / प्रिंटिंग / सीएससी सेवा) माहिती हवी आहे.';
     window.open(buildWhatsAppUrl(text), '_blank', 'noopener,noreferrer');
   };
 
@@ -57,23 +58,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-slate-200 transition-all shadow-sm">
+    <header className="sticky top-0 z-40 bg-white border-b border-slate-200 transition-all shadow-xs">
       
-      {/* ==================== 1. TOP UTILITY ANNOUNCEMENT BAR ==================== */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-3 sm:px-6 lg:px-8 border-b border-slate-800">
+      {/* ==================== 1. TOP UTILITY ANNOUNCEMENT BAR (Clean & Bright - No Black Background) ==================== */}
+      <div className="bg-slate-100 text-slate-700 text-xs py-1.5 px-3 sm:px-6 lg:px-8 border-b border-slate-200">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           
           {/* Left: Location & Hours */}
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs text-slate-300">
+          <div className="flex items-center gap-4 text-[11px] sm:text-xs text-slate-700 font-medium">
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-orange-600 shrink-0" />
               <span>{branch.landmark || 'ओंड, कराड, सातारा'} (महाराष्ट्र)</span>
             </span>
-            <span className="hidden md:inline-flex items-center gap-1.5 text-slate-400">
-              <Clock className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+            <span className="hidden md:inline-flex items-center gap-1.5 text-slate-600">
+              <Clock className="w-3.5 h-3.5 text-orange-600 shrink-0" />
               <span>वेळ: {branch.operationalHours || 'स. ८:०० ते रा. ८:००'}</span>
             </span>
-            <span className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800 text-orange-300 border border-slate-700 text-[10px] font-bold">
+            <span className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white text-orange-700 border border-slate-300 text-[10px] font-bold">
               {branch.motto || 'ज्ञानदीप: प्रगतये'} · {branch.cin}
             </span>
           </div>
@@ -84,21 +85,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenLogoZoom}
-                className="inline-flex items-center gap-1 text-orange-400 hover:text-orange-300 font-semibold cursor-pointer transition-colors"
+                className="inline-flex items-center gap-1 text-orange-700 hover:text-orange-900 font-bold cursor-pointer transition-colors"
                 title="लोगो हाय-लेव्हल झूम इन्स्पेक्टर उघडा"
               >
-                <Sparkles className="w-3 h-3" />
+                <Sparkles className="w-3 h-3 text-orange-600" />
                 <span>HD लोगो झूम</span>
               </button>
             )}
 
-            <span className="text-slate-600 hidden sm:inline">|</span>
+            <span className="text-slate-300 hidden sm:inline">|</span>
 
             <button
               onClick={handleWhatsAppGeneral}
-              className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold cursor-pointer transition-colors"
+              className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-900 font-bold cursor-pointer transition-colors"
             >
-              <MessageSquare className="w-3 h-3" />
+              <MessageSquare className="w-3 h-3 text-emerald-600" />
               <span className="hidden sm:inline">हेल्पडेस्क: </span>
               <span>व्हॉट्सॲप संवाद</span>
             </button>
@@ -107,11 +108,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* ==================== 2. MAIN LOGO ROW (PROPERLY UTILIZED SPACE) ==================== */}
+      {/* ==================== 2. MAIN LOGO ROW (Matches Footer Logo Box Feel) ==================== */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-3.5">
         <div className="flex items-center justify-between gap-4 lg:gap-6">
           
-          {/* Zone 1: Swarayee Box Logo & Brand Typography */}
+          {/* Zone 1: Swarayee Box Logo Matching Footer Emblem Box */}
           <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
@@ -123,23 +124,23 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Zone 2: Middle Section (Previously blank area) - Official Authorisation Badges */}
+          {/* Zone 2: Middle Section - Official Authorisation Badges */}
           <div className="hidden xl:flex items-center gap-4 flex-1 justify-center px-4">
             
             {/* Accreditation Badge 1: MKCL ALC */}
             <a
               href="#authorisations"
-              className="flex items-center gap-2.5 p-2 rounded-xl bg-orange-50/70 hover:bg-orange-100/80 border border-orange-200/80 transition-colors text-left group"
+              className="flex items-center gap-2.5 p-2 rounded-xl bg-orange-50/80 hover:bg-orange-100 border border-orange-200/90 transition-colors text-left group"
               title="MKCL Authorized Learning Centre (ALC)"
             >
-              <div className="p-2 rounded-lg bg-orange-500 text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+              <div className="p-2 rounded-lg bg-orange-600 text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
                 <GraduationCap className="w-4 h-4" />
               </div>
               <div className="leading-tight">
                 <div className="text-[11px] font-extrabold text-orange-950 uppercase tracking-wide">
                   MKCL ALC मान्यताप्राप्त
                 </div>
-                <div className="text-[10px] text-orange-700 font-medium">
+                <div className="text-[10px] text-orange-800 font-medium">
                   MS-CIT, Tally व शासकीय टायपिंग
                 </div>
               </div>
@@ -152,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="Startek FM220 Biometric Thumb Device Authorised Distributor"
             >
               <div className="p-2 rounded-lg bg-blue-600 text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                <span className="text-sm font-bold">👆</span>
+                <Fingerprint className="w-4 h-4" />
               </div>
               <div className="leading-tight">
                 <div className="text-[11px] font-extrabold text-blue-950 uppercase tracking-wide">
@@ -164,20 +165,20 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </a>
 
-            {/* Accreditation Badge 3: Tej Courier & CSC */}
+            {/* Accreditation Badge 3: Courier (India & Abroad) & CSC */}
             <a
               href="#courier"
-              className="flex items-center gap-2.5 p-2 rounded-xl bg-emerald-50/70 hover:bg-emerald-100/80 border border-emerald-200/80 transition-colors text-left group"
-              title="तेज कुरिअर अधिकृत बुकिंग व सीएससी सेवा"
+              className="flex items-center gap-2.5 p-2 rounded-xl bg-emerald-50/80 hover:bg-emerald-100 border border-emerald-200/90 transition-colors text-left group"
+              title="कुरिअर सेवा (भारत व भारताबाहेर) व सीएससी केंद्र"
             >
               <div className="p-2 rounded-lg bg-emerald-600 text-white shrink-0 group-hover:scale-105 transition-transform shadow-xs">
                 <Package className="w-4 h-4" />
               </div>
               <div className="leading-tight">
                 <div className="text-[11px] font-extrabold text-emerald-950 uppercase tracking-wide">
-                  तेज कुरिअर व CSC केंद्र
+                  कुरिअर (भारत व भारताबाहेर)
                 </div>
-                <div className="text-[10px] text-emerald-700 font-medium">
+                <div className="text-[10px] text-emerald-800 font-medium">
                   पार्सल ट्रॅकिंग, पॅन, आधार व दाखले
                 </div>
               </div>
@@ -185,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           </div>
 
-          {/* Zone 3: Direct Clean Contact & Mobile Toggle (No cramped pravesh choukashi here) */}
+          {/* Zone 3: Direct Clean Contact & Mobile Toggle */}
           <div className="flex items-center gap-2.5 shrink-0">
             
             {/* Quick WhatsApp helpline */}
@@ -211,8 +212,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* ==================== 3. DEDICATED MAIN NAVIGATION BAR ==================== */}
-      <nav className="hidden lg:block bg-slate-900 text-white border-t border-slate-800">
+      {/* ==================== 3. DEDICATED MAIN NAVIGATION BAR (Crisp & Clean - No Black Background) ==================== */}
+      <nav className="hidden lg:block bg-slate-800 text-white border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
@@ -224,8 +225,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   href={link.href}
                   className={`px-3 py-2.5 transition-colors whitespace-nowrap border-b-2 ${
                     idx === 0
-                      ? 'border-orange-500 text-orange-400 font-bold bg-slate-800/60'
-                      : 'border-transparent text-slate-300 hover:text-white hover:border-orange-400 hover:bg-slate-800/40'
+                      ? 'border-orange-500 text-orange-300 font-bold bg-slate-900/60'
+                      : 'border-transparent text-slate-200 hover:text-white hover:border-orange-400 hover:bg-slate-700/60'
                   }`}
                 >
                   {link.label}
@@ -244,9 +245,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               <button
                 onClick={onOpenBranchModal}
-                className="text-[11px] text-slate-300 hover:text-orange-400 flex items-center gap-1.5 cursor-pointer py-1"
+                className="text-[11px] text-slate-200 hover:text-orange-300 flex items-center gap-1.5 cursor-pointer py-1 font-medium"
               >
-                <PhoneCall className="w-3 h-3 text-orange-500" />
+                <PhoneCall className="w-3 h-3 text-orange-400" />
                 <span>शाखा माहिती</span>
               </button>
             </div>
@@ -267,7 +268,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
             <a href="#courier" onClick={() => setMobileMenuOpen(false)} className="p-2 bg-blue-50 rounded-lg text-blue-900">
               <Package className="w-4 h-4 mx-auto text-blue-600 mb-1" />
-              <div className="text-[10px] font-bold">तेज कुरिअर</div>
+              <div className="text-[10px] font-bold">कुरिअर सेवा</div>
             </a>
             <a href="#csc" onClick={() => setMobileMenuOpen(false)} className="p-2 bg-emerald-50 rounded-lg text-emerald-900">
               <ShieldCheck className="w-4 h-4 mx-auto text-emerald-600 mb-1" />
@@ -308,7 +309,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full py-2 text-center text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <Search className="w-3.5 h-3.5 text-blue-600" />
-              <span>तेज कुरिअर पार्सल ट्रॅक करा</span>
+              <span>कुरिअर पार्सल ट्रॅक करा</span>
             </button>
 
             {onOpenLogoZoom && (

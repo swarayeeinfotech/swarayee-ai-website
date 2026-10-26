@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Search, ShieldCheck, GraduationCap, Package, Stamp, Award, Fingerprint, MessageSquare } from 'lucide-react';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { buildWhatsAppUrl } from '../data/configStore';
 
 interface HeroProps {
@@ -40,13 +41,14 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Left Column: Value Proposition & CTAs */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Trust Kicker with Original Logo */}
+            {/* Trust Kicker with Original Logo - Matching Footer Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/90 shadow-2xs">
               <div className="w-8 h-8 rounded-lg overflow-hidden border border-orange-400 shadow-xs shrink-0 bg-white p-0.5">
                 <img
-                  src="/swarayee_logo.jpeg"
+                  src={ASSET_IMAGES.swarayeeLogo}
                   alt="Swarayee Logo"
                   className="w-full h-full object-contain rounded"
+                  loading="eager"
                 />
               </div>
               <span className="text-xs font-bold text-orange-950">
@@ -56,12 +58,12 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-950 leading-tight" style={{ textWrap: 'balance' }}>
-              संगणक शिक्षण, तेज कुरिअर, रबर स्टॅम्प, छपाई व सीएससी डिजिटल सेवा
+              संगणक शिक्षण, कुरिअर सेवा (भारत व भारताबाहेर), रबर स्टॅम्प, छपाई व सीएससी डिजिटल सेवा
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              विद्यार्थी, व्यावसायिक आणि नागरिकांसाठी शासनमान्य संगणक प्रशिक्षण (MS-CIT, Tally Prime with GST, Typing व Advanced Excel), जलद व विश्वासू तेज कुरिअर बुकिंग, प्री-इंक रबर स्टॅम्प, उच्च दर्जाची छपाई आणि प्रमाणित शासकीय ई-सेवा एकाच छताखाली उपलब्ध.
+              विद्यार्थी, व्यावसायिक आणि नागरिकांसाठी शासनमान्य संगणक प्रशिक्षण (MS-CIT, Tally Prime with GST, Typing व Advanced Excel), जलद व विश्वासू कुरिअर सेवा (भारत व भारताबाहेर पार्सल व डॉक्युमेंट डिलिव्हरी), प्री-इंक रबर स्टॅम्प, उच्च दर्जाची छपाई आणि प्रमाणित शासकीय ई-सेवा एकाच छताखाली उपलब्ध.
             </p>
 
             {/* Direct Primary Action Buttons */}
@@ -79,7 +81,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className="inline-flex items-center gap-2 px-4.5 py-3 text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 rounded-xl border border-slate-300 shadow-xs transition-colors cursor-pointer"
               >
                 <Search className="w-4 h-4 text-blue-600" />
-                <span>तेज कुरिअर ट्रॅक करा</span>
+                <span>कुरिअर पार्सल ट्रॅक करा</span>
               </button>
 
               <button
@@ -111,10 +113,10 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white p-2 group">
               <img
-                src="/src/assets/images/hero_swarayee_tech_1792845635854.jpg"
+                src={ASSET_IMAGES.heroImage}
                 alt="स्वराई कॉम्प्स अँड इन्फोटेक प्रशिक्षण व सेवा केंद्र"
                 className="w-full h-80 sm:h-96 object-cover object-center rounded-xl transform group-hover:scale-102 transition-transform duration-500"
-                referrerPolicy="no-referrer"
+                loading="eager"
               />
 
               {/* In-image caption container */}
@@ -160,11 +162,11 @@ export const Hero: React.FC<HeroProps> = ({
                 <Package className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                विभाग ०२ · तेज कुरिअर डेस्क
+                विभाग ०२ · कुरिअर सेवा (भारत व भारताबाहेर)
               </h3>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              जलद पार्सल बुकिंग व अधिकृत तेज कुरिअर पोर्टलवर थेट ट्रॅकिंग.
+              जलद पार्सल व डॉक्युमेंट बुकिंग व थेट ऑनलाइन पोर्टलवर ट्रॅकिंग.
             </p>
           </a>
 

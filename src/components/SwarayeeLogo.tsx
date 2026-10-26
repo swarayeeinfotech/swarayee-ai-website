@@ -1,11 +1,12 @@
 import React from 'react';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { SwarayeeVectorLogo } from './SwarayeeVectorLogo';
 
-export const OFFICIAL_SWARAYEE_LOGO_SRC = '/swarayee_logo.jpeg';
+export const OFFICIAL_SWARAYEE_LOGO_SRC = ASSET_IMAGES.swarayeeLogo;
 
 interface SwarayeeLogoProps {
   className?: string;
-  variant?: 'light' | 'dark' | 'header' | 'box-badge' | 'vector';
+  variant?: 'light' | 'dark' | 'header' | 'box-badge' | 'vector' | 'footer-emblem';
   size?: 'sm' | 'md' | 'lg' | 'header' | 'xl';
   onClick?: () => void;
   showZoomBadge?: boolean;
@@ -21,14 +22,14 @@ export const SwarayeeLogo: React.FC<SwarayeeLogoProps> = ({
   // Height classes calibrated for razor-sharp rendering and responsive visibility
   const heightClass =
     size === 'sm'
-      ? 'h-12 sm:h-14'
+      ? 'h-10 sm:h-12'
       : size === 'md'
-      ? 'h-16 sm:h-20'
+      ? 'h-14 sm:h-16'
       : size === 'lg'
-      ? 'h-20 sm:h-24'
+      ? 'h-16 sm:h-20'
       : size === 'xl'
-      ? 'h-28 sm:h-36'
-      : 'h-16 sm:h-20 md:h-22'; // 'header' size gives prominent visibility
+      ? 'h-24 sm:h-28'
+      : 'h-14 sm:h-16 md:h-18'; // 'header' size gives prominent visibility
 
   // If vector variant is selected, use the pure SVG for infinite scaling
   if (variant === 'vector') {
@@ -45,7 +46,27 @@ export const SwarayeeLogo: React.FC<SwarayeeLogoProps> = ({
     );
   }
 
-  // In dark footer: clean professional box card with the authentic original logo
+  // Pure box emblem (identical to footer logo box)
+  if (variant === 'footer-emblem' || variant === 'box-badge') {
+    return (
+      <div
+        onClick={onClick}
+        className={`inline-block p-1.5 rounded-2xl bg-white border-2 border-orange-500/80 shadow-md hover:border-orange-500 transition-all ${
+          onClick ? 'cursor-pointer' : ''
+        } ${className}`}
+        title="स्वराई अधिकृत लोगो"
+      >
+        <img
+          src={ASSET_IMAGES.swarayeeLogo}
+          alt="Swarayee Comps & Infotech"
+          className={`${heightClass} aspect-square object-contain rounded-xl`}
+          loading="eager"
+        />
+      </div>
+    );
+  }
+
+  // In dark contexts: clean professional box card with the authentic original logo
   if (variant === 'light') {
     return (
       <div
@@ -55,10 +76,10 @@ export const SwarayeeLogo: React.FC<SwarayeeLogoProps> = ({
         } ${className}`}
         title="Swarayee Comps And Infotech - Official Logo"
       >
-        {/* Box Squircle Container Housing Original Logo */}
-        <div className="relative shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-orange-500/60 shadow-inner bg-white p-1">
+        {/* Box Squircle Container Housing Original Logo - Matching Footer */}
+        <div className="relative shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 border-orange-500/70 shadow-inner bg-white p-1">
           <img
-            src={OFFICIAL_SWARAYEE_LOGO_SRC}
+            src={ASSET_IMAGES.swarayeeLogo}
             alt="Swarayee Comps And Infotech Official Logo"
             className="w-full h-full object-contain rounded-lg"
             loading="eager"
@@ -88,19 +109,19 @@ export const SwarayeeLogo: React.FC<SwarayeeLogoProps> = ({
     );
   }
 
-  // Header / Standard representation: Professional Box Touchup Feel with Authentic Original Logo
+  // Header / Standard representation: Professional Box Logo identical to footer logo with broad brand typography
   return (
     <div
       onClick={onClick}
-      className={`group relative flex items-center gap-2.5 sm:gap-3.5 shrink-0 ${
+      className={`group relative flex items-center gap-3 sm:gap-4 shrink-0 ${
         onClick ? 'cursor-pointer' : ''
       } ${className}`}
       title="Swarayee Comps And Infotech - Official Logo"
     >
-      {/* Box Shaped Professional Emblem Badge with Original Logo */}
-      <div className="relative shrink-0 rounded-2xl p-1 bg-white border-2 border-orange-500/80 shadow-md group-hover:border-orange-500 transition-all group-hover:shadow-orange-500/10">
+      {/* Box Shaped Professional Emblem Badge with Original Logo - Exactly like Footer */}
+      <div className="relative shrink-0 rounded-2xl p-1.5 bg-white border-2 border-orange-500/80 shadow-md group-hover:border-orange-500 transition-all group-hover:shadow-orange-500/15">
         <img
-          src={OFFICIAL_SWARAYEE_LOGO_SRC}
+          src={ASSET_IMAGES.swarayeeLogo}
           alt="Swarayee Comps And Infotech - Official Logo"
           className={`${heightClass} aspect-square object-contain rounded-xl transition-all duration-200`}
           loading="eager"
@@ -115,13 +136,13 @@ export const SwarayeeLogo: React.FC<SwarayeeLogoProps> = ({
           <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-wide font-serif leading-none">
             SWARAYEE
           </span>
-          <span className="w-2 h-2 rounded-full bg-orange-600 inline-block"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-orange-600 inline-block"></span>
         </div>
         <span className="text-xs sm:text-sm lg:text-base font-extrabold text-orange-600 tracking-widest uppercase leading-tight">
           COMPS AND INFOTECH
         </span>
         <span className="text-[10px] sm:text-xs font-bold text-slate-600 tracking-widest uppercase leading-none pt-0.5">
-          SOLUTIONS · SUPPORT · SUCCESS
+          ज्ञानदीप: प्रगतये · SOLUTIONS · SUPPORT · SUCCESS
         </span>
       </div>
 

@@ -30,9 +30,9 @@ export const SECTIONS_DATA: SectionItem[] = [
   {
     id: 'courier',
     num: '०२',
-    title: 'तेज कुरिअर डेस्क',
-    subtitle: 'पार्सल बुकिंग व थेट ट्रॅकिंग',
-    tag: 'अधिकृत पोर्टल',
+    title: 'कुरिअर सेवा',
+    subtitle: 'भारत व भारताबाहेर पार्सल सेवा',
+    tag: 'भारत व भारताबाहेर',
     icon: <Package className="w-5 h-5" />,
     bgLight: 'hover:bg-blue-50/60',
     textColor: 'text-blue-600',

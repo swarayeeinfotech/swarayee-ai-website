@@ -72,7 +72,7 @@ export default function App() {
           onOpenAdmissionModal={handleOpenAdmissionModal}
         />
 
-        {/* 3. Tej Courier Services with Official Tracking Link */}
+        {/* 3. Courier Services (India & Abroad) with Official Tracking Link */}
         <CourierSection />
 
         {/* 4. Rubber Stamp & Pre-Inked Stamp Crafting Studio */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RUBBER_STAMP_TYPES, INK_COLORS, STAMP_SHAPES } from '../data/businessData';
 import { Stamp, MessageSquare, Check, RefreshCw, Sliders } from 'lucide-react';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 import { buildWhatsAppUrl } from '../data/configStore';
 
 export const RubberStampSection: React.FC = () => {
@@ -11,12 +12,12 @@ export const RubberStampSection: React.FC = () => {
   // Customizable text lines
   const [line1, setLine1] = useState('SWARAYEE COMPS AND INFOTECH');
   const [line2, setLine2] = useState('AUTHORISED SIGNATORY');
-  const [line3, setLine3] = useState('OPC PVT LTD · INDIA');
+  const [line3, setLine3] = useState('OND, TAL. KARAD (SATARA)');
 
   const handleResetSample = () => {
     setLine1('SWARAYEE COMPS AND INFOTECH');
     setLine2('AUTHORISED SIGNATORY');
-    setLine3('OPC PVT LTD · INDIA');
+    setLine3('OND, TAL. KARAD (SATARA)');
   };
 
   const handleOrderWhatsApp = () => {
@@ -313,10 +314,10 @@ export const RubberStampSection: React.FC = () => {
             {/* High Quality Commercial Photography Showcase */}
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-900">
               <img
-                src="/src/assets/images/rubber_stamp_print_1792845637089.jpg"
+                src={ASSET_IMAGES.stampImage}
                 alt="स्वराई कॉम्प्स येथील रबर स्टॅम्प आणि छपाई कला"
                 className="w-full h-52 sm:h-60 object-cover object-center"
-                referrerPolicy="no-referrer"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
               <div className="absolute bottom-0 inset-x-0 p-4 text-white">

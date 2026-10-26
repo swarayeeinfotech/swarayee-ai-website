@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ZoomIn, ZoomOut, Maximize2, Download, ShieldCheck, Sparkles, Layers } from 'lucide-react';
 import { SwarayeeVectorLogo } from './SwarayeeVectorLogo';
+import { ASSET_IMAGES } from '../assets/assetRegistry';
 
 interface LogoZoomModalProps {
   isOpen: boolean;
@@ -21,7 +22,7 @@ export const LogoZoomModal: React.FC<LogoZoomModalProps> = ({ isOpen, onClose })
 
   const downloadHighResLogo = () => {
     const link = document.createElement('a');
-    link.href = '/swarayee_logo.jpeg';
+    link.href = ASSET_IMAGES.swarayeeLogo;
     link.download = 'Swarayee_Comps_Official_Logo.jpeg';
     document.body.appendChild(link);
     link.click();
@@ -182,7 +183,7 @@ export const LogoZoomModal: React.FC<LogoZoomModalProps> = ({ isOpen, onClose })
             ) : (
               <div className="w-72 h-auto rounded-3xl overflow-hidden shadow-2xl border-2 border-orange-500/80 bg-white p-4">
                 <img
-                  src="/swarayee_logo.jpeg"
+                  src={ASSET_IMAGES.swarayeeLogo}
                   alt="Swarayee Official Logo"
                   className="w-full h-auto object-contain block"
                   loading="eager"
